@@ -63,7 +63,7 @@ const Homepage = () => {
             <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_500,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/we-are-cult-logo/text-only-v2.png" alt="" style={{width: '35vw'}}/>
             </Grid>
             <Grid item sx={{padding: "2rem 0"}}>
-                <Typography variant="h4" width={"40vw"} textAlign={"center"} sx={{color: "white"}}>A fitness movement that is worth breaking a sweat for</Typography>
+                <Typography variant={"h4"} width={"40vw"} textAlign={"center"} sx={{color: "white"}}>A fitness movement that is worth breaking a sweat for</Typography>
             </Grid>
             <Grid item>
                 <Button sx={styles.button}>EXPLORE CULTPASS</Button>

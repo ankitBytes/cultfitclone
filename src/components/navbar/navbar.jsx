@@ -49,7 +49,7 @@ function Navbar() {
     "hyderabad",
   ];
 
-  const [selectedValue, setSelectedValue] = useState("");
+  const [selectedValue, setSelectedValue] = useState("bhubaneswar");
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
@@ -134,7 +134,6 @@ function Navbar() {
             component="a"
             href=""
             sx={{
-              mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
               fontFamily: "monospace",
@@ -168,19 +167,19 @@ function Navbar() {
             ))}
           </Box>
           <Stack sx={styles.left} direction={"row"} spacing={4}>
-            <FormControl sx={{ minWidth: 120, border: "none", color: 'white' }}>
-              <InputLabel>Select City</InputLabel>
+            <FormControl sx={{ minWidth: 120, border: "none", color: 'white', display: {md: 'flex', xs: 'none'} }}>
               <Select
                 value={selectedValue}
                 onChange={handleChange}
                 IconComponent={LocationOnIcon}
                 sx={{
                     borderRadius: "1rem",
-                  transition: "0.2s ease-in",
+                  transition: "background 0.4s",
                   color: 'white',
                   border: "none",
                   "&:hover": {
                     background: "#ffffff15",
+                    border: 'none',
                     borderRadius: "1rem",
                   },
                   "&:active": {
@@ -198,16 +197,17 @@ function Navbar() {
               </Select>
             </FormControl>
             <Button
-              sx={css`
-                color: white;
-                border: 0.1rem solid white;
-                transition: border 0.2s;
-                font-weight: bold;
+              sx={{
+                "color": "white",
+                "border": "0.1rem solid white",
+                "transition": "border 0.2s",
+                fontWeight: "bold",
+                display: {md: 'flex', xs: 'none'} ,
 
-                &:hover {
-                    border: 0.1rem solid grey;
+                "&:hover" : {
+                    border: "0.1rem solid grey"
                 }
-              `}
+              }}
             >
               GET APP
             </Button>
@@ -240,7 +240,7 @@ function Navbar() {
                 ))}
               </Menu>
             </Box>
-            <ShoppingCartOutlinedIcon fontSize="large" />
+            <ShoppingCartOutlinedIcon fontSize="large" sx={{display: {md: 'flex', xs: 'none'} }}/>
           </Stack>
         </Toolbar>
       </Container>
