@@ -6,8 +6,13 @@ import Mind from './Pages/Mind';
 import Store from './Pages/Store';
 
 
+import Layout from "./components/Layout.js";
 function App() {
+
   return (
+    <Layout />
+  )
+} 
     <div>
       <BrowserRouter>
       <Routes>
