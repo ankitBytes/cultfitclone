@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../Components/Layout/Layout';
+import Layout from '../components/Layout/Layout';
 import { Link } from 'react-router-dom';
 import Banner from '../Images/cult.jpg';
 import '../Styles/HomeStyles.css';

@@ -1,31 +1,26 @@
 
 import {BrowserRouter, Routes, Route} from'react-router-dom'
-import Home from './Pages/Home'
-import Care from './Pages/Care';
-import Mind from './Pages/Mind';
-import Store from './Pages/Store';
-
+import Home from './pages/Home'
+import Care from './pages/Care';
+import Mind from './pages/Mind';
+import Store from './pages/store/Store';
 
 import Layout from "./components/Layout.js";
 function App() {
 
-  return (
-    <Layout />
-  )
-} 
-    <div>
-      <BrowserRouter>
-      <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/care" element={<Care />} />
-              <Route path="/mind" element={<Mind />} />
-              <Route path="/store" element={<Store />} />
+  return(
+  <BrowserRouter>
+  <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/care" element={<Care />} />
+          <Route path="/mind" element={<Mind />} />
+          <Route path="/store" element={<Store />} />
 
-      </Routes>
-      </BrowserRouter>
-      
-    </div>
-  );
-};
+  </Routes>
+  </BrowserRouter>
+  )
+
+}
+   
 
 export default App;
