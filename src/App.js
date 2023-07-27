@@ -5,16 +5,10 @@ import Care from './Pages/Care';
 import Mind from './Pages/Mind';
 import Store from './Pages/Store';
 
-
-import Layout from "./components/Layout.js";
-function App() {
-
+function App () {
   return (
-    <Layout />
-  )
-} 
     <div>
-      <BrowserRouter>
+    <BrowserRouter>
       <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/care" element={<Care />} />
@@ -23,8 +17,7 @@ function App() {
 
       </Routes>
       </BrowserRouter>
-      
-    </div>
+      </div>
   );
 };
 
