@@ -13,7 +13,11 @@ const Homepage = () => {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding-top: 15vh
+            padding-top: 15vh;
+            background: url("https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_1400,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/we-are-cult-logo/promo-video-poster.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         `,
         img: css`
             height: 30vh;

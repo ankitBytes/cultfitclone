@@ -5,6 +5,8 @@ import PassHome from './components/passSection/pass';
 import PassDetail from './components/detailPass/PassDetail';
 import Cards from './components/cards/HomepageCards';
 import Banner from './components/store/storeBanner';
+import Family from './components/cultFamily/cultFamily';
+import WeAreCult from './components/weAreCult/weAreCult';
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
       <PassDetail />
       <Cards />
       <Banner />
+      <Family />
+      <WeAreCult />
     </>
   );
 };
