@@ -15,8 +15,9 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import TextField from "@mui/material/TextField";
 import { Select, FormControl, InputLabel, Stack } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import PersonIcon from '@mui/icons-material/Person';
+import PersonIcon from "@mui/icons-material/Person";
 import { css } from "@emotion/react";
+import { useNavigate } from "react-router-dom";
 
 const pages = ["FITNESS", "CARE", "MIND", "STORE"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -24,6 +25,8 @@ const settings = ["Profile", "Account", "Dashboard", "Logout"];
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -64,7 +67,10 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="fixed" sx={{background: 'transparent', boxShadow: 'none' }}>
+    <AppBar
+      position="fixed"
+      sx={{ background: "transparent", boxShadow: "none" }}
+    >
       <Container maxWidth="xl">
         <Toolbar
           disableGutters
@@ -121,11 +127,30 @@ function Navbar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate("/care");
+                }}
+              >
+                <Typography textAlign="center">Care</Typography>
+              </MenuItem>
+              <MenuItem
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate("/fitness");
+                }}
+              >
+                <Typography textAlign="center">Fitness</Typography>
+              </MenuItem>
+              <MenuItem
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate("/store");
+                }}
+              >
+                <Typography textAlign="center">Store</Typography>
+              </MenuItem>
             </Menu>
           </Box>
           <Typography
@@ -156,35 +181,60 @@ function Navbar() {
               justifyContent: "center",
             }}
           >
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Button
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/care");
+              }}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              Care
+            </Button>
+            <Button
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/fitness");
+              }}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              Fitness
+            </Button>
+            <Button
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/store");
+              }}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              Store
+            </Button>
           </Box>
           <Stack sx={styles.left} direction={"row"} spacing={4}>
-            <FormControl sx={{ minWidth: 120, border: "none", color: 'white', display: {md: 'flex', xs: 'none'} }}>
+            <FormControl
+              sx={{
+                minWidth: 120,
+                border: "none",
+                color: "white",
+                display: { md: "flex", xs: "none" },
+              }}
+            >
               <Select
                 value={selectedValue}
                 onChange={handleChange}
                 IconComponent={LocationOnIcon}
                 sx={{
-                    borderRadius: "1rem",
+                  borderRadius: "1rem",
                   transition: "background 0.4s",
-                  color: 'white',
+                  color: "white",
                   border: "none",
                   "&:hover": {
                     background: "#ffffff15",
-                    border: 'none',
+                    border: "none",
                     borderRadius: "1rem",
                   },
                   "&:active": {
                     background: "#ffffff15",
-                    border: "none"
+                    border: "none",
                   },
                 }}
               >
@@ -198,23 +248,23 @@ function Navbar() {
             </FormControl>
             <Button
               sx={{
-                "color": "white",
-                "border": "0.1rem solid white",
-                "transition": "border 0.2s",
+                color: "white",
+                border: "0.1rem solid white",
+                transition: "border 0.2s",
                 fontWeight: "bold",
-                display: {md: 'flex', xs: 'none'} ,
+                display: { md: "flex", xs: "none" },
 
-                "&:hover" : {
-                    border: "0.1rem solid grey"
-                }
+                "&:hover": {
+                  border: "0.1rem solid grey",
+                },
               }}
             >
               GET APP
             </Button>
-            <Box sx={{ flexGrow: 0, color: 'white' }}>
+            <Box sx={{ flexGrow: 0, color: "white" }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <PersonIcon fontSize="large"/>
+                  <PersonIcon fontSize="large" />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -240,7 +290,10 @@ function Navbar() {
                 ))}
               </Menu>
             </Box>
-            <ShoppingCartOutlinedIcon fontSize="large" sx={{display: {md: 'flex', xs: 'none'} }}/>
+            <ShoppingCartOutlinedIcon
+              fontSize="large"
+              sx={{ display: { md: "flex", xs: "none" } }}
+            />
           </Stack>
         </Toolbar>
       </Container>
