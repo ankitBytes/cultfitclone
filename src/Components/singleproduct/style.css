@@ -4,7 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 10px; /* Adjust this value to change spacing between images */
+  padding: 10vh 0; /* Adjust this value to change spacing between images */
 }
 
 .row {

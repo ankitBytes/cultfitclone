@@ -2,6 +2,8 @@ import React from 'react';
 import "./style.css"
 import AddToCartButton from './AddToCartButton';
 import BuyNowButton from './BuynowButton';
+import Navbar from '../navbar/storeNavbar';
+import PrimaryFooter from "../../Components/Footer/primaryFooter"
 const Singleproduct= () => {
   const product = {
     mname:'RPM FITNESS BY CULT.SPORT',
@@ -25,6 +27,8 @@ const Singleproduct= () => {
     
     
   return (
+    <>
+    <Navbar />
     <div className="image-gallery">
       <div className="row">
         <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_500,ar_3:4,c_fill/dpr_2/cultgear-content/8XW2NRkxF5tf42BaG8xZzy3U" alt=" 1"/>
@@ -79,6 +83,8 @@ const Singleproduct= () => {
 
       </div>
     </div>
+    <PrimaryFooter />
+    </>
   
   );
 };

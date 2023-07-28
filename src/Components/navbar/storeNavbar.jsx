@@ -12,15 +12,59 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import NotesIcon from "@mui/icons-material/Notes";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import TextField from "@mui/material/TextField";
-import { Select, FormControl, InputLabel, Stack } from "@mui/material";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { Stack } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import { css } from "@emotion/react";
 import { useNavigate } from "react-router-dom";
+import SearchIcon from '@mui/icons-material/Search';
+import { styled, alpha } from '@mui/material/styles';
+import InputBase from '@mui/material/InputBase';
 
-const pages = ["FITNESS", "CARE", "MIND", "STORE"];
+const pages = ["What's New", "Deal Zone", "Men", "Women", "Cardio", "Cycles", "Accessories", "Equipment", "Supplements", "Watch", "News"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
+
+const Search = styled('div')(({ theme }) => ({
+  position: 'relative',
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  '&:hover': {
+    backgroundColor: alpha(theme.palette.common.white, 0.25),
+  },
+  marginLeft: 0,
+  width: '80%',
+  [theme.breakpoints.up('sm')]: {
+    marginLeft: theme.spacing(1),
+    width: 'auto',
+  },
+}));
+
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+  padding: theme.spacing(0, 1),
+  height: '100%',
+  position: 'absolute',
+  pointerEvents: 'none',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: 'inherit',
+  '& .MuiInputBase-input': {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      width: '12ch',
+      '&:focus': {
+        // width: '20ch',
+      },
+    },
+  },
+}));
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -43,20 +87,6 @@ function Navbar() {
     setAnchorElUser(null);
   };
 
-  const places = [
-    "bhubaneswar",
-    "cuttack",
-    "delhi",
-    "noida",
-    "bengaluru",
-    "hyderabad",
-  ];
-
-  const [selectedValue, setSelectedValue] = useState("bhubaneswar");
-
-  const handleChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
 
   const styles = {
     left: css`
@@ -69,7 +99,7 @@ function Navbar() {
   return (
     <AppBar
       position="fixed"
-      sx={{ background: "#15171C", boxShadow: "none" }}
+      sx={{ background: "#15171c", boxShadow: "none" }}
     >
       <Container maxWidth="xl">
         <Toolbar
@@ -80,7 +110,6 @@ function Navbar() {
             variant="h6"
             noWrap
             component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -95,6 +124,9 @@ function Navbar() {
             <img
               src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_120,q_auto:eco,dpr_2,f_auto,fl_progressive//image/test/brand-logo/vman-and-white-cult-text.png"
               alt=""
+              onClick={
+                navigate("/")
+              }
             />
           </Typography>
 
@@ -127,30 +159,12 @@ function Navbar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              <MenuItem
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate("/care");
-                }}
-              >
-                <Typography textAlign="center">Care</Typography>
-              </MenuItem>
-              <MenuItem
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate("/fitness");
-                }}
-              >
-                <Typography textAlign="center">Fitness</Typography>
-              </MenuItem>
-              <MenuItem
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate("/store");
-                }}
-              >
-                <Typography textAlign="center">Store</Typography>
-              </MenuItem>
+            {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page}</Typography>
+                </MenuItem>
+              ))}
+              
             </Menu>
           </Box>
           <Typography
@@ -172,6 +186,9 @@ function Navbar() {
             <img
               src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_35,q_auto:eco,dpr_2,f_auto,fl_progressive//image/test/brand-logo/curefit-logo-white.svg"
               alt=""
+              onClick={
+                navigate("/")
+              }
             />
           </Typography>
           <Box
@@ -181,90 +198,32 @@ function Navbar() {
               justifyContent: "center",
             }}
           >
+          {pages.map((page) => (
             <Button
-              onClick={(e) => {
-                e.preventDefault();
-                navigate("/care");
-              }}
-              sx={{ my: 2, color: "white", display: "block" }}
+              key={page}
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block' }}
             >
-              Care
+              {page}
             </Button>
-            <Button
-              onClick={(e) => {
-                e.preventDefault();
-                navigate("/fitness");
-              }}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              Fitness
-            </Button>
-            <Button
-              onClick={(e) => {
-                e.preventDefault();
-                navigate("/store");
-              }}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              Store
-            </Button>
+          ))}
           </Box>
           <Stack sx={styles.left} direction={"row"} spacing={4}>
-            <FormControl
-              sx={{
-                minWidth: 120,
-                border: "none",
-                color: "white",
-                display: { md: "flex", xs: "none" },
-              }}
-            >
-              <Select
-                value={selectedValue}
-                onChange={handleChange}
-                IconComponent={LocationOnIcon}
-                sx={{
-                  borderRadius: "1rem",
-                  transition: "background 0.4s",
-                  color: "white",
-                  border: "none",
-                  "&:hover": {
-                    background: "#ffffff15",
-                    border: "none",
-                    borderRadius: "1rem",
-                  },
-                  "&:active": {
-                    background: "#ffffff15",
-                    border: "none",
-                  },
-                }}
-              >
-                <MenuItem value="">None</MenuItem>
-                {places.map((city) => (
-                  <MenuItem key={city} value={city}>
-                    {city}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-            <Button
-              sx={{
-                color: "white",
-                border: "0.1rem solid white",
-                transition: "border 0.2s",
-                fontWeight: "bold",
-                display: { md: "flex", xs: "none" },
-
-                "&:hover": {
-                  border: "0.1rem solid grey",
-                },
-              }}
-            >
-              GET APP
-            </Button>
+            
+            <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </Search>
+            
             <Box sx={{ flexGrow: 0, color: "white" }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <PersonIcon fontSize="large"  sx={{color: '#fafafa'}}/>
+                  <PersonIcon fontSize="large" sx={{color: '#fafafa'}}/>
                 </IconButton>
               </Tooltip>
               <Menu

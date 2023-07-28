@@ -264,7 +264,7 @@ function Navbar() {
             <Box sx={{ flexGrow: 0, color: "white" }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <PersonIcon fontSize="large" />
+                  <PersonIcon fontSize="large" sx={{color: '#fafafa'}}/>
                 </IconButton>
               </Tooltip>
               <Menu
