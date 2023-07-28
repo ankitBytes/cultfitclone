@@ -23,7 +23,7 @@ const PrimaryFooter = () => {
 
   return (
     <Box sx={styles.mainContainer}>
-      <Grid container maxWidth={"xl"} sx={{display: 'flex', justifyContent: "center", alignItems: 'center'}} maxHeight={"100%"} rowSpacing={{xs: 1}}>
+      <Grid container maxWidth={"xl"} sx={{display: 'flex', justifyContent: "center", alignItems: 'center'}} maxHeight={"100%"}>
         <Stack direction={{xs: 'column', md: 'row'}} width={"100%"} justifyContent={"center"}>
           <Grid item md={3} justifyContent={"center"} display={"flex"} direction={"column"} padding={"5vh 0"}>
             <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_150,q_auto:eco,dpr_2,f_auto,fl_progressive//image/test/brand-logo/vman-and-white-cult-text.png" alt="" style={{width: '60%', paddingBottom: '2vh'}}/>
