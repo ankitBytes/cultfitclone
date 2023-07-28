@@ -15,6 +15,7 @@ const Family = () => {
       align-items: center;
       border-radius: 2.5rem;
       transition: all 0.3s;
+      margin: 1vh 1vw;
 
       &:hover {
         cursor: pointer;
@@ -94,11 +95,12 @@ const Family = () => {
         container
         maxWidth={"lg"}
         sx={{ display: "flex", justifyContent: "space-around" }}
+        spacing={{xs: 1}}
       >
         <Grid item xs={12}>
           <Typography sx={styles.heading}>Join The Cult Family</Typography>
         </Grid>
-        <Grid item md={5.5} sx={styles.list1}>
+        <Grid item md={5} sx={styles.list1} xs={11}>
           <Typography sx={styles.carrer}>Careers At Cult</Typography>
           <img
             src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_600,q_auto:eco,dpr_2,f_auto,fl_progressive//image/test/join-the-cult/career-icons-v2.png"
@@ -107,7 +109,7 @@ const Family = () => {
           />
           <Button>LEARN MORE</Button>
         </Grid>
-        <Grid item md={5.5} sx={styles.list2}>
+        <Grid item md={5} sx={styles.list2} xs={11}>
           <Box sx={styles.headText}>
             <Typography sx={styles.headTextDetail}>cult.fit franchise</Typography>
             <Typography sx={styles.headTextDetail}>opportunities</Typography>

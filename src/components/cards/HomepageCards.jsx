@@ -29,6 +29,7 @@ const Cards = () => {
       border-radius: 30px;
       transition: all 0.3s;
       padding: 2rem 3rem;
+      margin-bottom: 5rem;
 
       &:hover {
         cursor: pointer;
@@ -44,6 +45,7 @@ const Cards = () => {
       border-radius: 30px;
       transition: all 0.3s;
       padding: 2rem 3rem;
+      margin-bottom: 5rem;
 
       &:hover {
         cursor: pointer;
@@ -59,6 +61,7 @@ const Cards = () => {
       border-radius: 30px;
       transition: all 0.3s;
       padding: 2rem 3rem;
+      margin-bottom: 5rem;
 
       &:hover {
         cursor: pointer;
@@ -90,7 +93,7 @@ const Cards = () => {
   return (
     <Box>
       <Grid container maxWidth={"lg"} sx={styles.mainContainer}>
-        <Grid item md={4.5} xs={12} sx={styles.box1}>
+        <Grid item md={4.5} xs={10} sx={styles.box1}>
           <Stack>
             <Box sx={styles.innerText}>
               <Typography sx={styles.heading}>cult transform</Typography>
@@ -99,7 +102,7 @@ const Cards = () => {
             <Typography sx={styles.subHeading}>Get coached to lose weight for good</Typography>
           </Stack>
         </Grid>
-        <Grid item md={4.5} xs={12} sx={styles.box2}>
+        <Grid item md={4.5} xs={10} sx={styles.box2}>
           <Stack>
             <Box sx={styles.innerText}>
               <Typography sx={styles.heading}>The .fit way</Typography>
@@ -108,7 +111,7 @@ const Cards = () => {
             <Typography sx={styles.subHeading}>Making health easy, one at a time</Typography>
           </Stack>
         </Grid>
-        <Grid item md={4.5} xs={12} sx={styles.box3}>
+        <Grid item md={4.5} xs={10} sx={styles.box3}>
           <Stack>
             <Box sx={styles.innerText}>
               <Typography sx={styles.heading}>Workout Gear</Typography>
@@ -117,7 +120,7 @@ const Cards = () => {
             <Typography sx={styles.subHeading}>Everything you need for your workout</Typography>
           </Stack>
         </Grid>
-        <Grid item md={4.5} xs={12} sx={styles.box4}>
+        <Grid item md={4.5} xs={10} sx={styles.box4}>
           <Stack>
             <Box sx={styles.innerText}>
               <Typography sx={styles.heading}>Sugar.fit</Typography>

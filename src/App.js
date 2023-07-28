@@ -7,6 +7,8 @@ import Cards from './components/cards/HomepageCards';
 import Banner from './components/store/storeBanner';
 import Family from './components/cultFamily/cultFamily';
 import WeAreCult from './components/weAreCult/weAreCult';
+import PrimaryFooter from './components/Footer/primaryFooter';
+import SecondaryFooter from './components/Footer/secondaryFooter';
 
 const App = () => {
   return (
@@ -18,7 +20,9 @@ const App = () => {
       <Cards />
       <Banner />
       <Family />
-      <WeAreCult />
+      {/* <WeAreCult /> */}
+      <PrimaryFooter />
+      <SecondaryFooter />
     </>
   );
 };

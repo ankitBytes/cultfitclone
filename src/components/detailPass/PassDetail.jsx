@@ -73,8 +73,8 @@ const PassDetail = () => {
         style={{ width: "16.188rem" }}
       />
       <Button sx={{ margin: "3rem 0" }}>Learn More</Button>
-      <Grid container maxWidth="md" sx={styles.mainContainer}>
-        <Grid item md={3} sm={3} xs={12}>
+      <Grid container maxWidth="md" sx={styles.mainContainer} rowSpacing={{xs: 5}}>
+        <Grid item md={3} sm={3} xs={10}>
           <Box sx={{postion: 'relative', transition: "transform 0.5s", "&:hover" : {
             "transform" : "scale(1.1)",
             "cursor" : "pointer"
@@ -100,7 +100,7 @@ const PassDetail = () => {
             </Grid>
           </Stack>
         </Grid>
-        <Grid item md={3} sm={3} xs={12}>
+        <Grid item md={3} sm={3} xs={10}>
         
         <Box sx={{postion: 'relative', transition: "transform 0.5s", "&:hover" : {
             "transform" : "scale(1.1)",
@@ -129,7 +129,7 @@ const PassDetail = () => {
             </Grid>
           </Stack>
         </Grid>
-        <Grid item md={3} sm={3} xs={12}>
+        <Grid item md={3} sm={3} xs={10}>
         <Box sx={{postion: 'relative', transition: "transform 0.5s", "&:hover" : {
           "transform" : "scale(1.1)",
           "cursor" : "pointer"
