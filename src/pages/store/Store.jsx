@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react";
 // import Navbar from '../../components/Navbar'
 import AllItems from "./store_page_components/AllItems";
 // import Footer from '../../components/Footer'
-import ScrollBtn from "../../components/ScrollBtn";
+import ScrollBtn from "../../Components/ScrollBtn";
 const Store = () => {
   return (
     <Box mt="24">

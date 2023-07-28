@@ -1,12 +1,12 @@
 import { Box, Heading, Flex, Image, Grid } from "@chakra-ui/react";
-import Slider from "../../../components/Slider";
+import Slider from "../../../Components/Slider";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import ItemsBox from "./ItemsBox";
-import FullSlider from "../../../components/FullSlider";
+import FullSlider from "../../../Components/FullSlider";
 const AllItems = () => {
   const [shirts, setShirts] = useState([]);
   const [cycles, setCycles] = useState([]);
