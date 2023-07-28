@@ -9,11 +9,12 @@ import {
   } from "@mui/material";
   import React from "react";
 import PrimaryFooter from "../Components/Footer/primaryFooter";
-import Header from "../Components/Layout/Header";
+// import Header from "../Components/Layout/Header";
+import Navbar from "../Components/navbar/secondaryNavbar";
   const Care = () => {
     return (
       <Box display={"flex"} flexDirection={"column"} width={"100%"} alignItems={"center"}>
-        <Header />
+        <Navbar />
         <h1>Mindfulness library</h1>
         <h2> THE MIND IS EVERYTHING WHAT YOU THINK YOU BECOME</h2>
         <p>Access our pre-recorded Meditation sessions at your convenience</p>

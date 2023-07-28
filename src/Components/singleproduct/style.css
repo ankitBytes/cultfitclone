@@ -1,0 +1,32 @@
+/* ImageGallery.css */
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px; /* Adjust this value to change spacing between images */
+}
+
+.row {
+  display: flex;
+  flex-basis: 100%;
+   /* Adjust this value to change spacing between images */
+}
+
+.row img {
+  width: 500px;
+  height: 650px;
+  margin: 5px; /* Adjust this value to add spacing between images */
+} 
+
+.product-info {
+  width: 45%; /* Adjust this value to control the width of the product info section */
+}
+
+.product-info h1 {
+  margin-top: 0;
+}
+
+.product-info h3 {
+  margin-top: 20px; /* Add spacing between the product name and description */
+}

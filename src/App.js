@@ -6,7 +6,9 @@ import Navbar from "../src/Components/navbar/navbar";
 import Fitness from "./Components/Layout/Layout";
 import PrimaryFooter from "./Components/Footer/primaryFooter";
 import Header from "./Components/Layout/Header";
+import Singleproduct from "../src/Components/singleproduct/singleproduct"
 
+// import ProductDescription from './Components/singleproduct/singleproduct.jsx'
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +18,7 @@ function App() {
           <Route path="/care" element={<Care />} />
           <Route path="/fitness" element={<Fitness />} />
           <Route path="/store" element={<Store />}></Route>
+          <Route path="/product" element={<Singleproduct />} />
         </>
       </Routes>
     </BrowserRouter>
