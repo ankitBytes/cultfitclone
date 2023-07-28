@@ -1,10 +1,7 @@
-import React from 'react'
-import Layout from '../Components/Layout/Layout';
-
 const Mind = () => {
-  return (
-    <Layout/>
-  )
+    return(
+        <h1>Mind</h1>
+    )
 }
 
-export default Mind
+export default Mind;

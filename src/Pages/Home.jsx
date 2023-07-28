@@ -1,23 +1,29 @@
 import React from 'react';
-import Layout from '../Components/Layout/Layout.js';
-import { Link } from 'react-router-dom';
-import Banner from '../Images/cult.jpg';
-import '../Styles/HomeStyles.css';
+import Navbar from '../components/navbar/navbar';
+import Homepage from '../components/heroSection/cultHomepage';
+import PassHome from '../components/passSection/pass';
+import PassDetail from '../components/detailPass/PassDetail';
+import Cards from '../components/cards/HomepageCards';
+import Banner from '../components/store/storeBanner';
+import Family from '../components/cultFamily/cultFamily';
+import WeAreCult from '../components/weAreCult/weAreCult';
+import PrimaryFooter from '../components/Footer/primaryFooter';
+import SecondaryFooter from '../components/Footer/secondaryFooter';
+
 const Home = () => {
   return (
-    <Layout>
-        <div className="home" style={{backgroundImage:`url(${Banner})`}}>
-         <div className="headerContainer">
-          <h1>TRAINING</h1>
-          <p>Best Fitness</p>
-          <Link to="/">
-          <button>
-            TRY FOR FREE
-          </button>
-          </Link>
-         </div>
-        </div>
-    </Layout>
+    <>
+      <Navbar />
+      <Homepage />
+      <PassHome />
+      <PassDetail />
+      <Cards />
+      <Banner />
+      <Family />
+      {/* <WeAreCult /> */}
+      <PrimaryFooter />
+      <SecondaryFooter />
+    </>
   );
 };
 
