@@ -4,12 +4,12 @@ import { Box } from "@chakra-ui/react";
 import AllItems from "./store_page_components/AllItems";
 // import Footer from '../../components/Footer'
 import ScrollBtn from "../../Components/ScrollBtn";
-import Navbar from "../../Components/navbar/storeNavbar";
-import PrimaryFooter from "../../Components/Footer/primaryFooter"
+// import Navbar from "../../Components/navbar/storeNavbar";
+// import PrimaryFooter from "../../Components/Footer/primaryFooter"
 const Store = () => {
   return (
     <Box mt="24">
-      <Navbar />
+      {/* <Navbar /> */}
       <Box>
         <AllItems />
       </Box>
@@ -18,7 +18,7 @@ const Store = () => {
       <Footer/>
     </Box> */}
       <ScrollBtn theme="dark" />
-      <PrimaryFooter />
+      {/* <PrimaryFooter /> */}
     </Box>
   );
 };
