@@ -32,7 +32,7 @@ const SportNav = ({ top = 12, show = true }) => {
       bg="white"
       display="flex"
       shadow="base"
-      top={`${top}`}
+      top="0"
       left="0"
       right="0"
       position="fixed"

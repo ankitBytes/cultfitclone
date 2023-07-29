@@ -17,7 +17,7 @@ import {
   FaFacebook,
   FaLinkedin,
 } from "react-icons/fa";
-// import Logo from "./Logo";
+import Logo from "./Logo";
 const SocialButton = ({ children, label, href }) => {
   return (
     <chakra.button
@@ -55,7 +55,7 @@ export default function Footer() {
           spacing={8}
         >
           <Stack align={"flex-start"}>
-            {/* <Logo /> */}
+            <Logo />
             <Text fontSize={"smaller"}>
               At cult.fit, we make group workouts fun, daily food healthy &
               tasty, mental fitness easy with yoga & meditation, Medical &
